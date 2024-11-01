@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Novel - Laskar Pelangi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* CSS Global Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #222;
+      color: #fff;
+      padding-top: 70px; /* Space untuk navbar fixed */
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: linear-gradient(135deg, #222, #333);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.5em;
+    }
+
+    .district {
+      color: #fff;
+    }
+
+    .novel {
+      color: red;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1em;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: red;
+    }
+
+    /* Styling untuk Hamburger Menu */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 250px;
+      height: 100%;
+      background: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+      transition: right 0.3s ease;
+      z-index: 1001;
+    }
+
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 10px 0;
+      font-size: 1.2em;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      align-self: flex-end;
+      margin: 10px;
+    }
+
+    /* Novel Detail Styling */
+    .novel-detail {
+      background-color: #333;
+      border-radius: 8px;
+      padding: 20px;
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .novel-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .novel-header h1 {
+      font-size: 2em;
+      color: #ff6b6b;
+      margin-bottom: 10px;
+    }
+
+    .novel-header p {
+      font-size: 1em;
+      color: #ccc;
+    }
+
+    .novel-image {
+      width: 100%;
+      max-width: 600px;
+      height: 400px; /* Tinggi default untuk image cover */
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .novel-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .novel-content {
+      line-height: 1.6;
+      font-size: 1em;
+      color: #ddd;
+      padding: 0 20px;
+      text-align: justify;
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .novel-header h1 {
+        font-size: 1.5em;
+      }
+
+      .novel-header p {
+        font-size: 0.9em;
+      }
+
+      .novel-image {
+        height: 300px; /* Tinggi lebih kecil di layar tablet */
+      }
+
+      .novel-content {
+        font-size: 0.9em;
+        padding: 0 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .novel-header h1 {
+        font-size: 1.3em;
+      }
+
+      .novel-header p {
+        font-size: 0.85em;
+      }
+
+      .novel-image {
+        height: 250px; /* Tinggi lebih kecil di layar ponsel */
+      }
+
+      .novel-content {
+        font-size: 0.85em;
+        padding: 0 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="brand">
+      <a href="index.html"><span class="district">District</span><span class="novel">Novel</span></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#popular">Popular</a></li>
+      <li><a href="#latest">Latest</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleSidebar()">
+      <i data-feather="menu"></i>
+    </button>
+  </nav>
+
+  <!-- Sidebar untuk Mobile -->
+  <aside class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">
+      <i data-feather="x"></i>
+    </button>
+    <a href="index.html">Home</a>
+    <a href="#popular">Popular</a>
+    <a href="#latest">Latest</a>
+    <a href="#contact">Contact</a>
+  </aside>
+
+  <!-- Novel Detail Section -->
+  <div class="novel-detail">
+    <!-- Header Novel Detail -->
+    <div class="novel-header">
+      <h1>Dilan 1990</h1>
+      <p>Penulis: Mas Enkos Kosasih</p>
+    </div>
+
+    <!-- Gambar Novel -->
+    <div class="novel-image">
+      <img src="cover/dilan.jpg" alt="Cover Laskar Pelangi">
+    </div>
+
+    <!-- Konten Cerita Novel -->
+    <div class="novel-content">
+      <p>
+        Di Bandung tahun 1990, ada seorang remaja bernama Milea,
+        gadis Jakarta yang pindah ke sekolah baru. Di sana,
+        ia bertemu dengan Dilan,
+        seorang murid yang dikenal aneh tapi menarik perhatian.
+        Dilan bukan tipe siswa teladan;
+        dia suka bertindak sesuka hati, berbicara dengan cara yang unik, 
+       dan bahkan merupakan anggota geng motor. Namun, di balik sikapnya yang sering tak terduga, 
+       dilan menyimpan sisi romantis yang membuat Milea penasaran.
+       </p>
+
+      <p>
+        Dilan tidak seperti cowok pada umumnya.
+        Dia tidak mendekati Milea dengan cara yang biasa,
+        tapi dengan cara yang membuat gadis itu tersenyum, 
+        heran, dan sering kali terkejut. Dilan mengirimkan surat-surat cinta yang ditulisnya sendiri,
+        memberinya teka-teki penuh misteri, dan bahkan mengundang Milea untuk berpetualang ke dunia Dilan yang penuh kejenakaan.
+        Dilan bukan sekadar romantis, tetapi juga pintar menemukan cara-cara tak biasa untuk menunjukkan perasaannya. Baginya,
+        Milea adalah seseorang yang harus dihargai dan diperjuangkan dengan caranya sendiri.
+      </p>
+      <p>
+        Namun, kisah cinta mereka tidak berjalan mulus.
+        Milea sering merasa khawatir pada Dilan yang terlibat dalam perkelahian antar geng motor, 
+        tetapi Dilan tetap berusaha meyakinkan Milea bahwa dia akan baik-baik saja.
+        Di tengah canda, romantisme, dan ketidakpastian, Dilan dan Milea menjalani kisah cinta yang tidak biasa,
+        yang penuh warna dan kenangan indah. Mereka belajar mengenal satu sama lain, menghadapi konflik,
+        dan merasakan getirnya perpisahan yang mungkin harus mereka lalui.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Script untuk Toggle Sidebar
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      if (sidebar.style.right === '0px') {
+        sidebar.style.right = '-100%';
+      } else {
+        sidebar.style.right = '0px';
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      feather.replace(); // Inisialisasi ikon Feather
+    });
+  </script>
+  <script src="https://unpkg.com/feather-icons"></script>
+</body>
+</html>

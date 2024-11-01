@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DistrictNovel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;
+0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="brand">
+      <a href=""><span class="district">District</span><span class="novel">Novel</span></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#popular">Popular</a></li>
+      <li><a href="#latest">Latest</a></li>
+      <li><a href="#content"><i data-feather="book"></i></a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleSidebar()">
+      <i data-feather="menu"></i>
+    </button>
+  </nav>
+
+  <!-- Sidebar (untuk perangkat mobile) -->
+  <aside class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">
+      <i data-feather="x"></i>
+    </button>
+    <a href="#home">Home</a>
+    <a href="#popular">Popular</a>
+    <a href="#latest">Latest</a>
+    <a href="#content">Main Content</a>
+  </aside>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-text">
+      <h1>Tempat Baca <span class="highlight">Novel</span> Premium Gratis</h1>
+      <p class="hero-description">Nikmati berbagai genre novel terbaru dan terpopuler tanpa biaya tambahan. Temukan kisah favoritmu dan baca tanpa batas, langsung di DistrictNovel.</p>
+    </div>
+  </div>
+
+  <div class="latest">
+    <h2>Latest Novel</h2>
+   </div>
+  <!-- Main Section dengan Card -->
+  <section class="main-section">
+    <div class="card">
+        <div class="card-header">Novel Pilihan</div>
+        <div class="card-image">
+          <img src="image/laskar.jpg" alt="Image 1">
+        </div>
+        <h2>Laskar Pelangi</h2>
+        <a href="laskar.html" class="read-more">Read More</a>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Novel Pilihan</div>
+        <div class="card-image">
+          <img src="image/dilan.jpg" alt="Image 1">
+        </div>
+        <h2>Dilan 1990</h2>
+        <a href="Dilan.html" class="read-more">Read More</a>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Novel Pilihan</div>
+        <div class="card-image">
+          <img src="image/nathan.jpg" alt="Image 1">
+        </div>
+        <h2>Dear Nathan</h2>
+        <a href="nathan.html" class="read-more">Read More</a>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Novel Pilihan</div>
+        <div class="card-image">
+          <img src="image/pertaruhan.jpg" alt="Image 1">
+        </div>
+        <h2>Pertaruhan</h2>
+        <a href="pertaruhan.html" class="read-more">Read More</a>
+      </div>
+      
+  </section>
+
+<!-- bagian footer -->
+ <!-- Footer -->
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-section about">
+      <h3>DistrictNovel</h3>
+      <p>Platform baca novel gratis dan lengkap. Temukan cerita favoritmu dengan mudah dan tanpa pungutan biaya.</p>
+    </div>
+    <div class="footer-section social">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://instagram.com" target="_blank"><i data-feather="instagram"></i></a>
+        <a href="https://wa.me/1234567890" target="_blank"><i data-feather="phone"></i></a>
+        <a href="https://facebook.com" target="_blank"><i data-feather="facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+  
+
+  <!-- javascript -->
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    feather.replace();
+  </script>
+</body>
+</html>
